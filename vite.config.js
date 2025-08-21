@@ -12,6 +12,8 @@ export default defineConfig({
 	server: {
 		port: 3100,
 		host: '0.0.0.0',
-		allowedHosts: ['anime.glisterbyte.com']
+		allowedHosts: ['anime.glisterbyte.com'],
+		hmr: false,
+		ws: false
 	}
 });

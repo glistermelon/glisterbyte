@@ -31,8 +31,10 @@
 	},
 	"dependencies": {
 		"@sveltejs/adapter-node": "^5.2.12",
+		"bcrypt": "^6.0.0",
 		"drizzle-orm": "^0.40.1",
 		"pg": "^8.16.2",
-		"postgres": "^3.4.5"
+		"postgres": "^3.4.5",
+		"svelte-dnd-action": "^0.9.64"
 	}
 }
