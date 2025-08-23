@@ -15,7 +15,7 @@
 
     const { data } = $props();
     let user = $state(data.user);
-    let animeList = $state(reorder(data.animeList, 'chrono', 'desc', true, true));
+    let animeList = $state(reorder(data.animeList, 'chrono', 'asc', true, true));
 
     let changeCounter = $state(0);
     let changedAnimeIds = new Set();
@@ -182,12 +182,12 @@
 
     function setOrderLinks() {
         if (animeList.length == 0) return;
-        if (animeList[animeList.length - 1].afterAnimeId !== null) {
-            markChange(animeList[animeList.length - 1].animeId);
-            animeList[animeList.length - 1].afterAnimeId = null;
+        if (animeList[0].afterAnimeId !== null) {
+            markChange(animeList[0].animeId);
+            animeList[0].afterAnimeId = null;
         }
-        for (let i = animeList.length - 2; i >= 0; i--) {
-            let prevId = animeList[i + 1].animeId;
+        for (let i = 1; i < animeList.length; i++) {
+            let prevId = animeList[i - 1].animeId;
             if (animeList[i].afterAnimeId != prevId) {
                 markChange(animeList[i].animeId);
                 animeList[i].afterAnimeId = prevId;
@@ -377,7 +377,7 @@
         <h1>glistermelon's Anime Profile</h1>
         <div>Finished<GapDot/><b>{animeList.filter(a => a.status == 1).length}</b></div>
         <div>Dropped<GapDot/><b>{animeList.filter(a => a.status == 0).length}</b></div>
-        <div>Favorite<GapDot/><b>Horimiya</b> (9.3)</div>
+        <!-- <div>Favorite<GapDot/><b>Horimiya</b> (9.3)</div> -->
     </div>
 </div>
 
@@ -716,6 +716,12 @@
         align-items: center;
     }
 
+    :global(.theme-light) .watch-status input {
+        filter: invert();
+        background-color: black;
+        border: 1px solid var(--light-border-color);
+    }
+
     #save-changes {
         position: fixed;
         bottom: 2rem;
@@ -723,7 +729,7 @@
         transform: translateX(-50%);
         width: 20rem;
         height: 5rem;
-        background-color: black;
+        background-color: var(--bg-color-0);
         border: 1px solid var(--light-border-color);
         z-index: 2;
         filter: drop-shadow(0rem 0rem 2rem black);
@@ -782,8 +788,8 @@
     }
 
     #profile-section-avatar-edit > div {
-        background-color: black;
-        border: 1px solid white;
+        background-color: var(--bg-color-0);
+        border: 1px solid var(--text-color);
         border-radius: 1rem;
         padding: 1rem;
         padding-top: 0.5rem;

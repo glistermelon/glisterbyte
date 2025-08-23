@@ -1,6 +1,6 @@
 <div>
     <h1>
-        Welcome to glisterbyte!
+        Welcome to anime.glisterbyte!
     </h1>
     <a href="/profile/glistermelon" class="hyperlink">
         Click here for Glistermelon's profile.

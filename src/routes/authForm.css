@@ -2,7 +2,7 @@
     --error-red: #d33c3c;
 }
 
-h1 {
+.auth-form h1 {
     font-size: 2rem;
     text-align: center;
     margin-top: 2rem;
@@ -12,11 +12,11 @@ h1 {
     text-align: center;
 }
 
-form > label:first-child {
+.auth-form form > label:first-child {
     margin-top: 1.2rem;
 }
 
-form {
+.auth-form form {
     display: flex;
     flex-direction: column;
     padding: 2rem;
@@ -26,13 +26,13 @@ form {
     margin-right: auto;
 }
 
-input {
+.auth-form input {
     font-size: 1rem;
     height: 2rem;
     margin-bottom: 1.5rem;
 }
 
-label {
+.auth-form label {
     font-weight: 500;
 }
 
@@ -41,7 +41,7 @@ label {
     color: var(--error-red);
 }
 
-.error {
+.auth-form .error {
     background-color: #841b1b;
     border: 1px solid red;
     border-radius: 0.3rem;

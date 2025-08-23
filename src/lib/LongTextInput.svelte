@@ -27,7 +27,7 @@
         width: fit-content;
         height: fit-content;
         z-index: 5;
-        background-color: black;
+        background-color: var(--bg-color-0);
         border: 1px solid var(--light-border-color)
     }
 
@@ -41,7 +41,7 @@
         height: 20rem;
         max-width: calc(100vw - 10rem);
         min-width: 10rem;
-        background-color: #1d1d1d;
+        background-color: var(--textarea-bg-color);
         border: 1px solid var(--dark-border-color);
         resize: none;
     }

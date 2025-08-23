@@ -81,12 +81,20 @@
         border-radius: 5px;
     }
 
-    .finished {
+    :global(.theme-dark) .finished {
         background-color: #09751d;
     }
+
+    :global(.theme-light) .finished {
+        background-color: #34c44e;
+    }
     
-    .dropped {
+    :global(.theme-dark) .dropped {
         background-color: #9b0e0e;
+    }
+        
+    :global(.theme-light) .dropped {
+        background-color: #d14a4a;
     }
 
 </style>

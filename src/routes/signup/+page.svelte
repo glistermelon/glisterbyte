@@ -37,16 +37,18 @@
     <title>Sign Up</title>
 </svelte:head>
 
-<h1>Sign Up</h1>
-{#if form?.error}
-<div class="error">
-    {form.error}
+<div class="auth-form">
+    <h1>Sign Up</h1>
+    {#if form?.error}
+    <div class="error">
+        {form.error}
+    </div>
+    {/if}
+    <form method="POST">
+        <label for="username">username<span id="taken"><GapDot/>taken</span></label>
+        <input id="username-input" type="text" name="username" bind:value={username}>
+        <label for="password">password</label>
+        <input id="password-input" type="password" name="password">
+        <button type="submit" class="button">submit</button>
+    </form>
 </div>
-{/if}
-<form method="POST">
-    <label for="username">username<span id="taken"><GapDot/>taken</span></label>
-    <input id="username-input" type="text" name="username" bind:value={username}>
-    <label for="password">password</label>
-    <input id="password-input" type="password" name="password">
-    <button type="submit" class="button">submit</button>
-</form>

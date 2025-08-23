@@ -82,7 +82,7 @@
                 >{rawAnimeList.filter((a) => a.status == 0).length}</b
             >
         </div>
-        <div>Favorite<GapDot /><b>Horimiya</b> (9.3/10)</div>
+        <!-- <div>Favorite<GapDot /><b>Horimiya</b> (9.3/10)</div> -->
     </div>
 </div>
 
