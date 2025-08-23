@@ -10,22 +10,18 @@
 	import { hideError, visibleErrorMessage } from '$lib/displayError';
 	
 	let { children, data } = $props();
-	let theme = $state(data.theme);
+
+	let inputTheme = data.theme;
+	if (inputTheme != 'dark' && inputTheme != 'light') inputTheme = 'dark';
+	let theme = $state(inputTheme);
 
 	let files = $state();
 
 	let longTextInputValue;
 
-	function setDarkTheme() {
-		document.body.classList.remove("theme-light");
-	}
-
-	function setLightTheme() {
-		document.body.classList.add("theme-light");
-	}
-
 	function switchTheme() {
-		theme = !theme;
+		if (!theme || theme == 'dark') theme = 'light';
+		else theme = 'dark';
 		document.cookie = `theme=${theme}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
 	}
 
@@ -35,7 +31,7 @@
 	<title>Glisterbyte</title>
 </svelte:head>
 
-<div id="pseudobody" class="{theme ? 'theme-light' : 'theme-dark'}">
+<div id="pseudobody" class="theme-{theme}">
 
 	<div id="main-content-container">
 
